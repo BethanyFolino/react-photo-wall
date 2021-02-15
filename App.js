@@ -15,13 +15,26 @@ const App = (props) => {
   // - will fetch an array of photos
   // - will set that array of photos to state once received
 
+  const SetPhotos = () => {
+    const [photos, setPhotos] = React.useState();
+
+    return (
+      <main>
+        <button onClick={() => setPhotos(PHOTO_LIST_URL)}>
+          Click here to find photos
+        </button>
+        <p>{photos}</p>
+      </main>
+    );
+  };
+
   return (
     <React.Fragment>
       <header>
         <h1>Photo Wall</h1>
         <p>
-          Read the README and complete the numbered steps. Afterward,
-          delete this paragraph.
+          Read the README and complete the numbered steps. Afterward, delete
+          this paragraph.
         </p>
       </header>
       <div className="collage">
