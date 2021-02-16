@@ -28,6 +28,12 @@ const App = (props) => {
     );
   };
 
+  React.useEffect(() => {
+    fetch("https://picsum.photos/list")
+      .then((object) => object.json())
+      .then((hydrated) => console.log(hydrated));
+  }, []);
+
   return (
     <React.Fragment>
       <header>
