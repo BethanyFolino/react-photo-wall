@@ -23,35 +23,36 @@ The acceptance criteria are all
 laid out in App.js in comments. We've also reproduced them
 below:
 
-### Step 1: Declare state  
+### Step 1: Declare state
 
 State should be set up with "useState" to include an array of photos and a method to "setPhotos", which will be iterated over later and displayed to the user in a grid.
 
-### Step 2: Declare a useEffect life cycle method 
+### Step 2: Declare a useEffect life cycle method
 
 This life cycle method should:
+
 - be called after the component is initially rendered
 - fetch an array of photos
 - add that array of photos to state once received
 
-
-### Step 3: Ensure valid images are rendered 
+### Step 3: Ensure valid images are rendered
 
 The generated images should include:
-- a photo's filename 
+
+- a photo's filename
 - a photo's id
 - a photo's URL
 
 Where "photo" is the current photo in the array of `photos` being iterated over.
 
-### Step 4: Styling 
+### Step 4: Styling
 
 Modify App.css to include styling that accomplishes the following:
 
-   - cause the header and .collage div to be centered on the page
-   - ensure that no more than 4 photos appear in a row 
+- cause the header and .collage div to be centered on the page
+- ensure that no more than 4 photos appear in a row
 
-## Stretch Goals (Optional) 
+## Stretch Goals (Optional)
 
 If you find yourself with extra time (e.g., don't have other assessments to
 catch up on), you may consider improving the quality in a number of ways:
@@ -70,6 +71,7 @@ catch up on), you may consider improving the quality in a number of ways:
 Once you finish the assessment please push your code to your "dev" branch for this repository then create a Pull Request on Github, and submit the link for your pull request.
 
 ## Credits and References
-Author:
 
-References:
+Author: Bethany Folino
+
+References: got help from Mike A. and DeQuan Mitchell
