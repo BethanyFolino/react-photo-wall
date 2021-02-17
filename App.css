@@ -12,7 +12,11 @@ header {
 .collage {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }
 /* TODO: Write CSS rules that ensure that no more than 4 photos appear on a row */
+img {
+  flex-basis: 25%;
+}
