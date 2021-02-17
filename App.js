@@ -6,8 +6,9 @@ function getPhotoFromId(photoId) {
 // about various photos.
 const PHOTO_LIST_URL = "https://picsum.photos/list";
 
-const App = (props) => {
+const App = () => {
   // 1. Set up React.useState in order to create a variable that will be used to include an array of photos and a method to "setPhotos"
+  const [photos, setPhotos] = React.useState([]);
 
   // 2. Declare a React.useEffect life cycle method
   // This life cycle method:
@@ -15,48 +16,29 @@ const App = (props) => {
   // - will fetch an array of photos
   // - will set that array of photos to state once received
 
-  const SetPhotos = () => {
-    const [photos, setPhotos] = React.useState();
-
-    return (
-      <main>
-        <button onClick={() => setPhotos(PHOTO_LIST_URL)}>
-          Click here to find photos
-        </button>
-        <p>{photos}</p>
-      </main>
-    );
-  };
-
   React.useEffect(() => {
-    fetch("https://picsum.photos/list")
+    fetch(PHOTO_LIST_URL)
       .then((object) => object.json())
-      .then((hydrated) => console.log(hydrated));
-  }, []);
-
+      .then((hydrated) => setPhotos(hydrated));
+  });
   return (
     <React.Fragment>
       <header>
         <h1>Photo Wall</h1>
-        <p>
-          Read the README and complete the numbered steps. Afterward, delete
-          this paragraph.
-        </p>
       </header>
       <div className="collage">
         {/* We use map below because Array.prototype.map is an expression,
          and for loops are not. JSX will only be able to interperet Javascript expressions
          when being used inside of curly braces.
          */}
-        {/* 
+
         {photos.map((photo) => (
           <img
-            alt="3. Fill me in with the photo's filename"
-            key="4. Fill me in with the photo's id"
-            src="5. Fill me in with the photo's URL"
+            alt={photo.filename}
+            key={photo.id}
+            src={getPhotoFromId(photo.id)}
           />
-        ))} 
-        */}
+        ))}
       </div>
     </React.Fragment>
   );
